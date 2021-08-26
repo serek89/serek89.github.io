@@ -1,0 +1,74 @@
+:root {
+    --dark-blue: #276d9a;
+    --light-blue: #65c2d4;
+}
+
+@font-face {
+    font-family: geomanist;
+    src: url(../font/geomanist-regular-webfont.eot);
+    src: url(../font/geomanist-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../font/geomanist-regular-webfont.woff2) format('woff2'),
+         url(../font/geomanist-regular-webfont.woff) format('woff'),
+         url(../font/geomanist-regular-webfont.ttf) format('truetype'),
+         url(../font/geomanist-regular-webfont.svg#geomanist) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*, *::after, *::before {
+    font-family: geomanist, serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: calc(100vh - 7em);
+    overflow: hidden;
+    background-image: 
+        url("../img/ZB_1.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+}
+
+#slogan {
+    padding: 2.5em 0;
+    color: var(--dark-blue);
+    box-shadow: 0 0 1em black;
+    z-index: 10;
+}
+
+#slogan > h1 {
+    margin: 0;
+    font-size: 2em !important;
+    font-weight: normal;
+}
+
+#about {
+    color: #FFFFFF;
+    background-image: 
+        linear-gradient(0.25turn, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.3)),
+        url("../img/ZB_2.jpg");
+}
+
+#application {
+    color: #FFFFFF;
+    background-image: 
+        linear-gradient(0.25turn, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.3)),
+        url("../img/ZB_2.jpg");
+}
