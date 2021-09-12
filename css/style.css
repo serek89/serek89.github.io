@@ -1,106 +1,156 @@
 :root {
-    --dark-blue: #276d9a;
-    --light-blue: #65c2d4;
-    --white: #FFFFFF;
+    --light: hsl(194, 100%, 62%);
+    --blue: hsl(194, 100%, 42%);
+    --dark: hsl(194, 97%, 22%);
 }
 
 @font-face {
-    font-family: geomanist;
-    src: url(../font/geomanist-regular-webfont.eot);
-    src: url(../font/geomanist-regular-webfont.eot?#iefix) format('embedded-opentype'),
-         url(../font/geomanist-regular-webfont.woff2) format('woff2'),
-         url(../font/geomanist-regular-webfont.woff) format('woff'),
-         url(../font/geomanist-regular-webfont.ttf) format('truetype'),
-         url(../font/geomanist-regular-webfont.svg#geomanist) format('svg');
+    font-family: geomanist-regular;
+    src: url(../font/Geomanist-Regular-Webfont/geomanist-regular-webfont.eot);
+    src: url(../font/Geomanist-Regular-Webfont/geomanist-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../font/Geomanist-Regular-Webfont/geomanist-regular-webfont.woff2) format('woff2'),
+         url(../font/Geomanist-Regular-Webfont/geomanist-regular-webfont.woff) format('woff'),
+         url(../font/Geomanist-Regular-Webfont/geomanist-regular-webfont.ttf) format('truetype'),
+         url(../font/Geomanist-Regular-Webfont/geomanist-regular-webfont.svg#geomanist) format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
-*, *::after, *::before {
-    font-family: geomanist, serif;
-    box-sizing: border-box;
+
+@font-face {
+    font-family: geomanist-bold;
+    src: url(../font/Geomanist-Bold-Webfont/geomanist-bold-webfont.eot);
+    src: url(../font/Geomanist-Bold-Webfont/geomanist-bold-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../font/Geomanist-Bold-Webfont/geomanist-bold-webfont.woff2) format('woff2'),
+         url(../font/Geomanist-Bold-Webfont/geomanist-bold-webfont.woff) format('woff'),
+         url(../font/Geomanist-Bold-Webfont/geomanist-bold-webfont.ttf) format('truetype'),
+         url(../font/Geomanist-Bold-Webfont/geomanist-bold-webfont.svg#geomanist) format('svg');
+    font-weight: bold;
+    font-style: normal;
 }
 
-html, body {
+
+html {
+    height: 100vh;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+body{
     margin: 0;
     padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: geomanist-regular, serif;
 }
 
-h1, h2 {
-    font-weight: 500;
-}
-
-.block {
+header {
     position: relative;
-    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container {
-    width: 100%;
-    max-width: 1170px;
-    padding: 2em;
-}
-
-.header {
-    height: 100vh;
-    background-image: url("../img/ZB_1.jpg");
-    background-color: var(--dark-blue);
-    background-blend-mode: multiply;
-    background-size: cover;
-}
-
-.header img {
+header img {
     max-height: 15em;
     margin: 0.5em;;
 }
 
-.header h1 {
-    color: var(--white);
-    font-weight: 900;
-    font-size: 3em;
+header h1 {
+    color: hsl(0, 0%, 100%);
+    font-size: 3.5em;
     margin: 0.5em;
+    font-family: geomanist-bold, serif;
+    line-height: 1em;
 }
 
-.white-bar {
-    background-color: var(--light-blue);
-    color: var(--white);
-    border-top: var(--white) 5px solid;
-    border-bottom: var(--white) 5px solid;
+@media (max-width: 481px) {
+    header h1 {
+        display: none;
+    }
 }
 
-.white-bar > .container {
-    border-left: var(--white) 5px solid;
-    border-right: var(--white) 5px solid;
-}
-
-.bg2 {
-    color: var(--white);
-    background-image: 
-        linear-gradient(0.25turn, rgba(39, 109, 154, 1) 50% ,rgba(101, 194, 212, 0.4)),
-        url("../img/bg2.png");
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../img/ZB_1.jpg");
+    background-color: var(--blue);
+    background-blend-mode: multiply;
+    transform: translateZ(-1px) scale(2.1);
     background-size: cover;
+    z-index: -1;
 }
 
-.bg2 a {
-    color: var(--white);
+strong {
+    font-family: geomanist-bold, serif;
+}
+
+.slogan {
+    text-align: center;
+}
+
+ h1 {
+    font-size: 2em;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.bar-white {
+    width: 100%;
+    color: var(--blue);
+    background-color: hsl(0, 0%, 100%);
+}
+
+.bar-bg {
+    width: 100%;
+    color: hsl(0, 0%, 100%);
+    background-image: url("../img/bg2.png");
+    background-size: cover;
+    background-color: var(--blue);
+    background-blend-mode: multiply;
+}
+
+.bar-bg a {
+    color: hsl(0, 0%, 100%);
     text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 0.1em;
+    font-family: geomanist-bold, serif;
 }
 
-.bg2 a:hover {
-    color: var(--light-blue);
+.bar-bg a:hover {
+    color: var(--light);
+    text-decoration: none;
+    font-family: geomanist-bold, serif;
 }
 
-#slogan_2 > p {
-    text-align: right;
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 5em auto;
+    box-sizing: border-box;
+    padding: 0em 1em;
 }
 
 #footer {
     display: flex;
+}
+
+@media (max-width: 481px) {
+    #footer {
+        flex-direction: column;
+    }
 }
 
 #footer > div  {
@@ -112,15 +162,15 @@ h1, h2 {
 }
 
 #footer a {
-    color: var(--dark-blue);
+    color: var(--blue);
     font-size: 2em;
-    font-weight: bolder;
+    font-family: geomanist-bold, serif;
     text-decoration: none;
-    letter-spacing: 0.1em;
+
 }
 
 #footer a:hover {
-    color: var(--white);
+    color: var(--dark);
 }
 
 
