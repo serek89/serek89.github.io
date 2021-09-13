@@ -2,6 +2,7 @@
     --light: hsl(194, 100%, 62%);
     --blue: hsl(194, 100%, 42%);
     --dark: hsl(194, 97%, 22%);
+    --font-size: 16px;
 }
 
 @font-face {
@@ -33,7 +34,7 @@
 html {
     height: 100vh;
     overflow: hidden;
-    font-size: 16px;
+    font-size: var(--font-size);
 }
 
 body{
@@ -81,11 +82,9 @@ header::after {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url("../img/ZB_1.jpg");
-    background-color: var(--blue);
-    background-blend-mode: multiply;
-    transform: translateZ(-1px) scale(2.1);
+    background-image: url("../img/hero_bg.jpg");
     background-size: cover;
+    transform: translateZ(-1px) scale(2.1);
     z-index: -1;
 }
 
@@ -117,10 +116,16 @@ main {
 .bar-bg {
     width: 100%;
     color: hsl(0, 0%, 100%);
-    background-image: url("../img/bg2.png");
     background-size: cover;
-    background-color: var(--blue);
-    background-blend-mode: multiply;
+    background-position: center;
+}
+
+.bar-bg1 {
+    background-image: url("../img/bg1.jpg");
+}
+
+.bar-bg2 {
+    background-image: url("../img/bg2.jpg");
 }
 
 .bar-bg a {
@@ -173,7 +178,14 @@ main {
     color: var(--dark);
 }
 
+#footer .logo {
+    background-image: url("../img/rebel_logo.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: calc(7 * var(--font-size));
+    height: calc(2 * var(--font-size));
+}
 
-#footer img {
-    height: 1.2em;
+#footer .st0 {
+    fill: var(--blue);
 }
