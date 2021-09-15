@@ -6,6 +6,18 @@
 }
 
 @font-face {
+    font-family: geomanist-light;
+    src: url(../font/Geomanist-Light-Webfont/geomanist-light-webfont.eot);
+    src: url(../font/Geomanist-Light-Webfont/geomanist-light-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../font/Geomanist-Light-Webfont/geomanist-light-webfont.woff2) format('woff2'),
+         url(../font/Geomanist-Light-Webfont/geomanist-light-webfont.woff) format('woff'),
+         url(../font/Geomanist-Light-Webfont/geomanist-light-webfont.ttf) format('truetype'),
+         url(../font/Geomanist-Light-Webfont/geomanist-light-webfont.svg#geomanist) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: geomanist-regular;
     src: url(../font/Geomanist-Regular-Webfont/geomanist-regular-webfont.eot);
     src: url(../font/Geomanist-Regular-Webfont/geomanist-regular-webfont.eot?#iefix) format('embedded-opentype'),
@@ -26,7 +38,7 @@
          url(../font/Geomanist-Bold-Webfont/geomanist-bold-webfont.woff) format('woff'),
          url(../font/Geomanist-Bold-Webfont/geomanist-bold-webfont.ttf) format('truetype'),
          url(../font/Geomanist-Bold-Webfont/geomanist-bold-webfont.svg#geomanist) format('svg');
-    font-weight: bold;
+         font-weight: normal;
     font-style: normal;
 }
 
@@ -56,21 +68,63 @@ header {
     justify-content: center;
 }
 
+header > .half {
+    width: 50%;
+    padding: 0.5em;
+}
+
+header > .left {
+    text-align: right;
+}
+
+header > .right {
+    text-align: left;
+}
+
 header img {
     max-height: 15em;
-    margin: 0.5em;;
 }
 
-header h1 {
+header p {
     color: hsl(0, 0%, 100%);
     font-size: 3.5em;
-    margin: 0.5em;
+    margin: 0;
+    overflow: hidden;
     font-family: geomanist-bold, serif;
     line-height: 1em;
+    width: 100%;
 }
 
-@media (max-width: 481px) {
-    header h1 {
+header #part_1 {
+    animation: part1 4s steps(60, end);
+}
+@keyframes part1{ 
+    from { width: 0; } 
+} 
+
+header #part_2 {
+    animation: part2 6s steps(60, end);
+}
+@keyframes part2{ 
+    0% { width: 0; }
+    25% { width: 0; }
+    100% { width: 100; } 
+} 
+
+header #part_3 {
+    animation: part3 9s steps(60, end);
+}
+@keyframes part3{ 
+    0% { width: 0; }
+    45% { width: 0; }
+    100% { width: 100; } 
+} 
+
+@media (max-width: 650px) {
+    header > .left {
+        text-align: center;
+    }
+    header > .right {
         display: none;
     }
 }
@@ -97,6 +151,7 @@ strong {
 }
 
  h1 {
+    font-family: geomanist-light, serif;
     font-size: 2em;
 }
 
